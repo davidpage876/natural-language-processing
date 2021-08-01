@@ -3,7 +3,9 @@
   "version": "1.0.1",
   "main": "index.js",
   "scripts": {
-    "start": "node src/server/index.js"
+    "start": "node src/server/index.js",
+    "build-prod": "webpack --config webpack.prod.js",
+    "build-dev": "webpack --config webpack.dev.js"
   },
   "keywords": [
     "nlp",
@@ -14,9 +16,10 @@
   "license": "MIT",
   "description": "A web application which allows the user to analyse text on other websites using Natural Language Processing (NLP).",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/davidpage876/natural-language-processing.git"
