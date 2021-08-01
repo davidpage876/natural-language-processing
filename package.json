@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack serve --open --config webpack.dev.js"
+    "build-dev": "webpack --config webpack.dev.js",
+    "dev-server": "webpack serve --open --config webpack.dev.js"
   },
   "keywords": [
     "nlp",
