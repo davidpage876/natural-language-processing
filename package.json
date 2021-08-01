@@ -6,7 +6,7 @@
     "start": "node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack --config webpack.dev.js",
-    "dev-server": "webpack serve --open --config webpack.dev.js"
+    "dev-server": "webpack serve --open --port 8000 --config webpack.dev.js"
   },
   "keywords": [
     "nlp",
