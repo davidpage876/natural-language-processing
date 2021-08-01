@@ -4,3 +4,5 @@ function handleSubmit(event) {
     const url = document.getElementById('url').value;
     console.log(`Form submitted with url: ${url}`);
 }
+
+export { handleSubmit }
