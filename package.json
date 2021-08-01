@@ -1,0 +1,28 @@
+{
+  "name": "natural-language-processing",
+  "version": "1.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server/index.js"
+  },
+  "keywords": [
+    "nlp",
+    "natural lanugage processing",
+    "natural language"
+  ],
+  "author": "David C. Page",
+  "license": "MIT",
+  "description": "A web application which allows the user to analyse text on other websites using Natural Language Processing (NLP).",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidpage876/natural-language-processing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidpage876/natural-language-processing/issues"
+  },
+  "homepage": "https://github.com/davidpage876/natural-language-processing#readme"
+}
