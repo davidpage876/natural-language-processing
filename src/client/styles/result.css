@@ -1,0 +1,8 @@
+
+.output {
+    display: none;
+}
+
+.output.has-result {
+    display: block;
+}
