@@ -17,6 +17,7 @@
   "license": "MIT",
   "description": "A web application which allows the user to analyse text on other websites using Natural Language Processing (NLP).",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1"
   },
   "repository": {
