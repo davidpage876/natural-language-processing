@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Natural Language Processor</title>
+</head>
+
+<body class="home">
+    <header>
+        <h1 class="title">
+            Natural Language Processor
+        </h1>
+        <nav>
+            <ul class="nav-menu">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="input">
+            <form onsubmit="return Client.handleSubmit(event)">
+                <label for="url">Web page address:</label>
+                <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30"
+                    required>
+                <input type="submit" name="submit" value="Submit">
+            </form>
+        </section>
+        <section class="output">
+            <h2>Results:</h2>
+            <div id="results"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="legal-info">
+            <p>© 2021 David C. Page</p>
+        </div>
+    </footer>
+</body>
+
+</html>
