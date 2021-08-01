@@ -16,9 +16,7 @@
   "license": "MIT",
   "description": "A web application which allows the user to analyse text on other websites using Natural Language Processing (NLP).",
   "dependencies": {
-    "express": "^4.17.1",
-    "webpack": "^5.47.1",
-    "webpack-cli": "^4.7.2"
+    "express": "^4.17.1"
   },
   "repository": {
     "type": "git",
@@ -31,6 +29,9 @@
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.8",
-    "babel-loader": "^8.2.2"
+    "babel-loader": "^8.2.2",
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2"
   }
 }
