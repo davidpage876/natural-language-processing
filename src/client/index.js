@@ -11,5 +11,5 @@ import './styles/footer.scss';
 import './styles/form.scss';
 import './styles/result.scss';
 
-// Library exports.
-export { handleSubmit };
+// Listen for form submission event.
+document.getElementById('input-form').addEventListener('submit', handleSubmit);
