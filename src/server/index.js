@@ -18,6 +18,23 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../../dist/index.html'));
 });
 
+// Handle NLP requests through post route, where post body contains url to analyse.
+app.post('/nlp', (req, res) => {
+
+    console.log(req.body);
+
+    // Analyse NLP through Meaning Cloud API.
+    const base = 'https://api.meaningcloud.com/sentiment-2.1';
+    const inputUrl = encodeURI(req.body.url);
+    const requestUrl = `${base}/?key=${apiKey},url=${inputUrl}`;
+
+    fetch(requestUrl)
+    .then((data) => {
+        console.log(data);
+        res.send(data);
+    });
+});
+
 // Start production server on port 8080.
 const PORT = 8080;
 app.listen(PORT, () => {
