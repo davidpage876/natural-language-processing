@@ -29,7 +29,7 @@ app.post('/nlp', (req, res) => {
 
     console.log(req.body);
 
-    // Analyse NLP through Meaning Cloud API.
+    // Analyse NLP through Meaning Cloud sentiment analysis API.
     const base = 'https://api.meaningcloud.com/sentiment-2.1';
     const inputUrl = encodeURI(req.body.url);
     const requestUrl = `${base}/?key=${apiKey},lang=auto,url=${inputUrl}`;
