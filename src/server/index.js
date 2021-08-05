@@ -8,10 +8,16 @@ const apiKey = process.env.API_KEY;
 // Set up express server.
 const path = require('path');
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
-
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(express.static(path.join(__dirname, '../../dist')));
+app.use(cors());
+
+// Allow us to make fetch-style requests on the server.
+const fetch = require('node-fetch');
 
 // Retrieve HTML on root get route.
 app.get('/', (req, res) => {
