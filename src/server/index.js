@@ -40,6 +40,10 @@ app.post('/nlp', (req, res) => {
     .then((data) => {
         console.log(data);
         res.send(data);
+    })
+    .catch(error => {
+        console.log("NLP request failed: " + error);
+        res.status(500).json({ error });
     });
 });
 
