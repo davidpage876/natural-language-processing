@@ -37,7 +37,8 @@ app.post('/nlp', (req, res) => {
     console.log(requestUrl);
 
     fetch(requestUrl)
-    .then((data) => {
+    .then(data => data.json())
+    .then(data => {
         console.log(data);
         res.send(data);
     })
