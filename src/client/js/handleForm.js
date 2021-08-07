@@ -2,25 +2,21 @@ import { postData } from './request.js';
 
 /**
  * Handles the submit event on the input form.
- * Performs an NLP request with the URL provided by user.
+ * Performs an API request with the URL provided by user.
  * @param {Event} event Submit event data.
  */
-function handleSubmit(event) {
+async function handleSubmit(event) {
     event.preventDefault();
 
     // Get URL provided by user.
     const url = document.getElementById('url').value;
     console.log(`Form submitted with url: ${url}`);
 
-    // Make NLP request.
-    postData('/nlp', { url })
-    .then((result) => {
+    // Make API request.
+    const result = await postData('/nlp', { url });
+    console.log(result);
 
-        console.log(result);
-
-        // Display output.
-
-    });
+    // Display output.
 }
 
 export { handleSubmit }
