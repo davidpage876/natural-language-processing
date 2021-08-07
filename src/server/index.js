@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 });
 
 // Handle NLP requests through post route, where post body contains url to analyse.
-app.post('/nlp', (req, res) => {
+app.post('/nlp', async (req, res) => {
 
     console.log(req.body);
 
@@ -36,16 +36,16 @@ app.post('/nlp', (req, res) => {
 
     console.log(requestUrl);
 
-    fetch(requestUrl)
-    .then(data => data.json())
-    .then(data => {
-        console.log(data);
-        res.send(data);
-    })
-    .catch(error => {
+    const result = await fetch(requestUrl);
+    try {
+        console.log(result);
+        const response = await result.json();
+        res.send(response);
+        console.log(response);
+    } catch (error) {
         console.log("NLP request failed: " + error);
         res.status(500).json({ error });
-    });
+    }
 });
 
 // Start production server on port 8080.
