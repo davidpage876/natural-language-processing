@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
     entry: './src/client/index.js',
@@ -9,6 +11,9 @@ module.exports = {
     output: {
         libraryTarget: 'var',
         library: 'Client'
+    },
+    optimization: {
+        minimizer: [ new CssMinimizerPlugin(), '...' ]
     },
     module: {
         rules: [
@@ -19,7 +24,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+                use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
             }
         ]
     },
@@ -28,6 +33,7 @@ module.exports = {
             template: './src/client/views/index.html',
             filename: './index.html'
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin()
     ]
 }
