@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/server/index.js",
-    "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack --config webpack.dev.js",
-    "dev-server": "webpack serve --open --port 8000 --config webpack.dev.js"
+    "build-prod": "webpack --config webpack.config.js --mode production",
+    "build-dev": "webpack --config webpack.config.js --mode development",
+    "dev-server": "webpack serve --open --port 8000 --config webpack.config.js --mode development"
   },
   "keywords": [
     "nlp",
@@ -45,6 +45,7 @@
     "terser-webpack-plugin": "^5.1.4",
     "webpack": "^5.47.1",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
   }
 }
