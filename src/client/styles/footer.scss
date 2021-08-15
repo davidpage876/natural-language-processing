@@ -1,0 +1,8 @@
+@import 'base.scss';
+
+footer {
+
+    @include bar;
+    justify-content: center;
+
+}

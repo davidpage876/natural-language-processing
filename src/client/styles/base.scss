@@ -2,3 +2,19 @@
 // Theme colors.
 $light-color: #eee;
 $dark-color: #222;
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+@mixin bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+    background: $dark-color;
+    color: $light-color;
+}
