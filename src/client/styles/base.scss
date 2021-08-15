@@ -3,6 +3,7 @@
 $light-color: #eee;
 $dark-color: #222;
 
+// Main layout.
 body {
     min-height: 100vh;
     margin: 0;
@@ -10,6 +11,11 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
+main {
+    padding: 25px 20px;
+}
+
+// Common style for header and footer bars.
 @mixin bar {
     display: flex;
     align-items: center;
