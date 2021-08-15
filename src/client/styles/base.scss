@@ -1,7 +1,30 @@
 
+// Fonts.
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 // Theme colors.
 $light-color: #eee;
 $dark-color: #222;
+
+// Typology.
+p,
+a,
+h1,
+h2,
+label,
+input,
+div {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+}
+
+h1 {
+    font-size: 1.4em;
+}
+
+h2 {
+    font-size: 1.3em;
+}
 
 // Main layout.
 body {
