@@ -20,6 +20,10 @@ async function handleSubmit(event) {
     urlInput.disabled = true;
     submitInput.disabled = true;
 
+    // Show loading message.
+    const inputForm = document.getElementById('input-form');
+    inputForm.classList.add('loading');
+
     // Make API request.
     const result = await postData('/nlp', { url });
     console.log(result);
@@ -45,6 +49,9 @@ async function handleSubmit(event) {
     // Re-enable form buttons.
     urlInput.disabled = false;
     submitInput.disabled = false;
+
+    // Hide loading message.
+    inputForm.classList.remove('loading');
 }
 
 export { handleSubmit }
