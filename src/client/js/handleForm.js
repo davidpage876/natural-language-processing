@@ -11,8 +11,14 @@ async function handleSubmit(event) {
     event.preventDefault();
 
     // Get URL provided by user.
-    const url = document.getElementById('url').value;
+    const urlInput = document.getElementById('url');
+    const url = urlInput.value;
     console.log(`Form submitted with url: ${url}`);
+
+    // Disable form buttons.
+    const submitInput = document.getElementById('submit');
+    urlInput.disabled = true;
+    submitInput.disabled = true;
 
     // Make API request.
     const result = await postData('/nlp', { url });
@@ -35,6 +41,10 @@ async function handleSubmit(event) {
      <div>Subjectivity: </div><div>${subjectivity}</div>
      <div>Irony: </div><div>${irony}</div>
      <div>Confidence: </div><div>${confidence}%</div>`;
+
+    // Re-enable form buttons.
+    urlInput.disabled = false;
+    submitInput.disabled = false;
 }
 
 export { handleSubmit }

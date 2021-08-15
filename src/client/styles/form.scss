@@ -24,4 +24,8 @@
         color: $light-color;
     }
 
+    input:disabled {
+        opacity: 50%;
+    }
+
 }
