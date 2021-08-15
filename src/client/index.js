@@ -1,5 +1,9 @@
 console.log('entry point started');
 
+// Dependencies needed for development server.
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
 // Scripts.
 import { handleSubmit } from './js/handleForm.js';
 
