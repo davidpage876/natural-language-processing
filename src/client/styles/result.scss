@@ -1,8 +1,20 @@
 
 .output {
-    display: none;
-}
 
-.output.has-result {
-    display: block;
+    display: none;
+
+    &.has-result {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .results {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 30px;
+        padding: 10px 0;
+    }
+
 }

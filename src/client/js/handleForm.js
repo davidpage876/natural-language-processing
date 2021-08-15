@@ -30,11 +30,11 @@ async function handleSubmit(event) {
     const irony = result.irony;
     const confidence = result.confidence;
     resultsContainer.innerHTML =
-    `<p>Overall polarity: ${polarity.toUpperCase()}</p>
-     <p>Agreement: ${agreement}</p>
-     <p>Subjectivity: ${subjectivity}</p>
-     <p>Irony: ${irony}</p>
-     <p>Confidence: ${confidence}%</p>`;
+    `<div>Overall polarity: </div><div>${polarity.toUpperCase()}</div>
+     <div>Agreement: </div><div>${agreement}</div>
+     <div>Subjectivity: </div><div>${subjectivity}</div>
+     <div>Irony: </div><div>${irony}</div>
+     <div>Confidence: </div><div>${confidence}%</div>`;
 }
 
 export { handleSubmit }

@@ -14,8 +14,10 @@ body {
 main {
     padding: 25px 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 30px;
     background: linear-gradient(0deg, #bbbbbb, transparent);
 }
 
