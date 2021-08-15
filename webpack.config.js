@@ -43,6 +43,8 @@ const productionConfig = {
         ]
     },
     plugins: [
+        new MiniCssExtractPlugin(),
+        new WorkboxPlugin.GenerateSW(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         })
