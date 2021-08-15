@@ -1,5 +1,5 @@
 
-@keyframes flash-green {
+@keyframes flash {
 
     from {
         background: rgba(255, 255, 255, 0);
@@ -14,7 +14,7 @@
     }
 
     to {
-        background: rgba(255, 255, 255, 0);
+        background: rgba(255, 255, 255, 0.6);
     }
 
 }
@@ -22,8 +22,8 @@
 .output {
 
     display: none;
-    background: rgba(255, 255, 255, 0);
-    animation-name: flash-green;
+    background: rgba(255, 255, 255, 0.6);
+    animation-name: flash;
     animation-duration: 3s;
 
     &.has-result {
