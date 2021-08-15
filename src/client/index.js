@@ -8,12 +8,7 @@ import "regenerator-runtime/runtime";
 import { handleSubmit } from './js/handleForm.js';
 
 // Styles.
-import './styles/normalize.scss';
-import './styles/base.scss';
-import './styles/header.scss';
-import './styles/footer.scss';
-import './styles/form.scss';
-import './styles/result.scss';
+import './styles/main.scss';
 
 // Listen for form submission event.
 document.getElementById('input-form').addEventListener('submit', handleSubmit);
