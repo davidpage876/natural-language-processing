@@ -2,10 +2,6 @@
 // Fonts.
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-// Theme colors.
-$light-color: #eee;
-$dark-color: #222;
-
 // Typology.
 p,
 a,
@@ -49,14 +45,4 @@ main {
     main {
         min-height: unset;
     }
-}
-
-// Common style for header and footer bars.
-@mixin bar {
-    display: flex;
-    align-items: center;
-    padding: 10px 25px;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
-    background: $dark-color;
-    color: $light-color;
 }
