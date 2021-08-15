@@ -1,0 +1,27 @@
+@import 'base.scss';
+
+.input-form {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    label {
+        font-size: 1.2em;
+    }
+
+    input[type='url'] {
+        border: solid 2px $dark-color;
+        padding: 10px 10px;
+    }
+
+    input[type='submit'] {
+        border: none;
+        padding: 13px 36px;
+        background: $dark-color;
+        color: $light-color;
+    }
+
+}
