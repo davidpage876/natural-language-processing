@@ -28,7 +28,7 @@ const commonConfig = {
             template: './src/client/views/index.html',
             filename: './index.html'
         }),
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin()
     ]
 };
 
@@ -43,8 +43,9 @@ const productionConfig = {
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin(),
-        new WorkboxPlugin.GenerateSW()
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
+        })
     ]
 };
 
@@ -61,7 +62,12 @@ const developmentConfig = {
                 use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('development')
+        })
+    ]
 };
 
 module.exports = (env, args) => {
