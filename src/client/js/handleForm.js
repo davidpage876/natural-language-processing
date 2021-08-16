@@ -36,7 +36,8 @@ async function handleSubmit(event) {
         errorMsg.innerText = '';
         console.log(`Form submitted with url: ${url}`);
     } else {
-        errorMsg.innerText = `Invalid url submitted: ${url}`;
+        errorMsg.innerText = `Invalid url: "${url}"`;
+        console.log(`Invalid url submitted: ${url}`);
         return;
     }
 
