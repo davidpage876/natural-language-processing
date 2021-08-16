@@ -5,7 +5,9 @@ import { analysePolarity } from './analyseResults.js';
  * Validates user input before it is submitted.
  */
 function validateInput(url) {
-    return false;
+    if (url == null) {
+        return false;
+    }
 }
 
 /**
@@ -68,4 +70,4 @@ async function handleSubmit(event) {
     inputForm.classList.remove('loading');
 }
 
-export { handleSubmit }
+export { handleSubmit, validateInput }
