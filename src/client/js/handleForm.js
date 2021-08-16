@@ -22,6 +22,10 @@ function validateInput(url) {
 async function handleSubmit(event) {
     event.preventDefault();
 
+    // Hide any previous results.
+    const resultsSection = document.getElementById('results-section');
+    resultsSection.classList.remove('has-result');
+
     // Get URL provided by user.
     const urlInput = document.getElementById('url');
     const url = urlInput.value;
@@ -53,7 +57,6 @@ async function handleSubmit(event) {
     const polarity = analysePolarity(result.sentimented_concept_list);
 
     // Display output.
-    const resultsSection = document.getElementById('results-section');
     resultsSection.classList.add('has-result');
     const resultsContainer = document.getElementById('results');
     const agreement = result.agreement;
