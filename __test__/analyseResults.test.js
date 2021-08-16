@@ -8,7 +8,7 @@ describe("Testing analysis of sentiment analysis API results", () => {
 
     test("analysePolarity() without parameter", () => {
         expect(() => analysePolarity()).toThrow();
-    })
+    }),
 
     test("analysePolarity() with one concept", () => {
         expect(analysePolarity([ { score_tag: 'P+'} ])).toBe('very positive');
@@ -17,7 +17,7 @@ describe("Testing analysis of sentiment analysis API results", () => {
         expect(analysePolarity([ { score_tag: 'N'} ])).toBe('negative');
         expect(analysePolarity([ { score_tag: 'N+'} ])).toBe('very negative');
         expect(analysePolarity([ { score_tag: 'NONE'} ])).toBe('none');
-    })
+    }),
 
     test("analysePolarity() with two concepts", () => {
         expect(analysePolarity([ { score_tag: 'P+'}, { score_tag: 'N+'} ])).toBe('neutral');
@@ -40,6 +40,15 @@ describe("Testing analysis of sentiment analysis API results", () => {
         expect(analysePolarity([ { score_tag: 'NEU'}, { score_tag: 'NONE'} ])).toBe('neutral');
         expect(analysePolarity([ { score_tag: 'N'}, { score_tag: 'NONE'} ])).toBe('negative');
         expect(analysePolarity([ { score_tag: 'N+'}, { score_tag: 'NONE'} ])).toBe('very negative');
+    }),
+
+    test("analysePolarity() with multiple concepts", () => {
+        const conceptList = [
+            { score_tag: 'P' },
+            { score_tag: 'N' },
+            { score_tag: 'P+' }
+        ];
+        expect(analysePolarity(conceptList)).toBe('positive');
     })
 
 });
