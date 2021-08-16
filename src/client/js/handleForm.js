@@ -51,7 +51,7 @@ async function handleSubmit(event) {
     inputForm.classList.add('loading');
 
     // Make API request.
-    const result = await postData('/nlp', { url });
+    const result = await postData('http://localhost:8080/nlp', { url });
     console.log(result);
 
     // Analyse result.
