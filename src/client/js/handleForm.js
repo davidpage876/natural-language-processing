@@ -2,10 +2,18 @@ import { postData } from './request.js';
 import { analysePolarity } from './analyseResults.js';
 
 /**
+ * Validates user input before it is submitted.
+ */
+function validateInput(url) {
+    return false;
+}
+
+/**
  * Handles the submit event on the input form.
  * Performs an API request with the URL provided by user,
  * then displays the results on the page.
  * @param {Event} event Submit event data.
+ * @throws {Error} Thrown if the user submitted an invalid URL.
  */
 async function handleSubmit(event) {
     event.preventDefault();
@@ -13,7 +21,13 @@ async function handleSubmit(event) {
     // Get URL provided by user.
     const urlInput = document.getElementById('url');
     const url = urlInput.value;
-    console.log(`Form submitted with url: ${url}`);
+
+    // Validate user input.
+    if (validateInput(url)) {
+        console.log(`Form submitted with url: ${url}`);
+    } else {
+        throw new Error(`Invalid url submitted: ${url}`);
+    }
 
     // Disable form buttons.
     const submitInput = document.getElementById('submit');

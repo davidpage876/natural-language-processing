@@ -29,7 +29,7 @@
 
     .loading-msg {
         position: absolute;
-        bottom: -33px;
+        bottom: -60px;
         opacity: 0;
     }
 
@@ -38,6 +38,13 @@
             opacity: 1;
             transition: opacity 0.6s ease-in-out;
         }
+    }
+
+    .error-msg {
+        position: absolute;
+        bottom: -60px;
+        color: #f00;
+        text-align: center;
     }
 
 }
