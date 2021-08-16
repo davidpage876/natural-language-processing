@@ -35,6 +35,8 @@ function analysePolarity(conceptList) {
         };
     }
 
+    //console.log(counts);
+
     // Find total sentiment score.
     const sum =
         counts.positiveStrong +
@@ -46,6 +48,8 @@ function analysePolarity(conceptList) {
         return 'none';
     }
 
+    //console.log(sum);
+
     // Find weighted average of sentiment scores.
     const weightedAverage =
         (counts.positiveStrong * 2 +
@@ -53,8 +57,19 @@ function analysePolarity(conceptList) {
             counts.negative * -1 +
             counts.negativeStrong * -2) / sum;
 
-    // Return description based on weighted average.
-    switch (Math.round(weightedAverage)) {
+    //console.log(weightedAverage);
+
+    // Calculate rounded average.
+    // Math.round() produces incorrect results for negative values, so we correct for that here.
+    function round(x) {
+        return Math.sign(x) * Math.round(Math.abs(x));
+    }
+    const roundedAverage = round(weightedAverage);
+
+    //console.log(roundedAverage);
+
+    // Return description based on rounded average.
+    switch (roundedAverage) {
         case 2:
             return 'very positive';
         case 1:
