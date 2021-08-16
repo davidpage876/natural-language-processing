@@ -36,6 +36,8 @@
     .results {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+        column-gap: 30px;
         gap: 30px 30px;
         padding: 10px 0;
     }
