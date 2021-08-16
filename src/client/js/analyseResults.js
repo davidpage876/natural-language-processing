@@ -6,6 +6,10 @@
  */
 function analysePolarity(conceptList) {
 
+    if (conceptList == null) {
+        throw new Error('analysePolarity() requires a conceptList to analyse');
+    }
+
     // Count sentiment scores.
     const counts = {
         positiveStrong: 0,
