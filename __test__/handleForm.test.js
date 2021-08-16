@@ -14,4 +14,18 @@ describe("Testing form submission input", () => {
         expect(validateInput()).toBeFalsy();
     })
 
+    test("validateInput() with invalid input", () => {
+        expect(validateInput('htps://test.com')).toBeFalsy();
+        expect(validateInput('//test.com')).toBeFalsy();
+        expect(validateInput('test.com')).toBeFalsy();
+        expect(validateInput('https://test com')).toBeFalsy();
+        expect(validateInput('hhttps://test.com')).toBeFalsy();
+    })
+
+    test("validateInput() with valid input", () => {
+        expect(validateInput('https://test.com')).toBeTruthy();
+        expect(validateInput('http://test.com')).toBeTruthy();
+        expect(validateInput('http://www.test.com')).toBeTruthy();
+    })
+
 });

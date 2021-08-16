@@ -7,6 +7,9 @@ import { analysePolarity } from './analyseResults.js';
 function validateInput(url) {
     if (url == null) {
         return false;
+    } else {
+        const regex = new RegExp(/^https?:\/\/\S*$/);
+        return regex.test(url);
     }
 }
 
