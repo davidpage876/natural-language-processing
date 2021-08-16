@@ -11,16 +11,7 @@ import { handleSubmit } from './js/handleForm.js';
 import './styles/main.scss';
 
 // Listen for form submission events.
-document.getElementById('input-form').addEventListener('submit', async (event) => {
-    const errorMsg = document.getElementById('error');
-    try {
-        await handleSubmit(event);
-        errorMsg.innerText = '';
-    } catch (error) {
-        console.log(error);
-        errorMsg.innerText = error;
-    }
-});
+document.getElementById('input-form').addEventListener('submit', handleSubmit);
 
 // Run service worker in production mode when supported.
 if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {

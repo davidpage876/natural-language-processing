@@ -18,7 +18,6 @@ function validateInput(url) {
  * Performs an API request with the URL provided by user,
  * then displays the results on the page.
  * @param {Event} event Submit event data.
- * @throws {Error} Thrown if the user submitted an invalid URL.
  */
 async function handleSubmit(event) {
     event.preventDefault();
@@ -28,10 +27,13 @@ async function handleSubmit(event) {
     const url = urlInput.value;
 
     // Validate user input.
+    const errorMsg = document.getElementById('error');
     if (validateInput(url)) {
+        errorMsg.innerText = '';
         console.log(`Form submitted with url: ${url}`);
     } else {
-        throw new Error(`Invalid url submitted: ${url}`);
+        errorMsg.innerText = `Invalid url submitted: ${url}`;
+        return;
     }
 
     // Disable form buttons.
